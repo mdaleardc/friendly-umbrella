@@ -1,25 +1,25 @@
 import "./globals.css";
 import InstallBanner from "@/components/InstallBanner";
-import Navbar from "@/components/Navbar"; // Import the new Navbar component
-import ClearStorage from "@/components/ClearStorage";
+import Navbar from "@/components/Navbar";
+import GrassFooter from "@/components/GrassFooter";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
-  title: "Learn Rohingya Language",
+  title: "Learn Rohingya Fonna",
   description: "Learn the Hanifi Rohingya script — alphabets, vowels, numbers, and words. Free offline app.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Learn Rohingya",
+    title: "Learn Rohingya Fonna",
   },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#7BB8DC",
+  themeColor: "#2A091B",
 };
-
 export default function RootLayout({ children }) {
   return (
     /*
@@ -28,23 +28,29 @@ export default function RootLayout({ children }) {
      * dir="rtl" + unicode-bidi:isolate so they render RTL correctly inside
      * the LTR layout without affecting surrounding elements.
      */
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" style={{ background: "#d0e8f5" }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hanifi+Rohingya:wght@400;700&family=Nunito:wght@400;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+       <link
+  href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
       </head>
-      <body className="bg-sky-bg min-h-screen" dir="ltr">
-        <ClearStorage/>
+      <body className="bg-sky-bg min-h-dvh flex flex-col" dir="ltr">
+        <GoogleAnalytics gaId="G-FLVCT8T6PL"/>
         <Navbar />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <InstallBanner />
+        <footer className="mt-auto shrink-0">
+        <div className="text-center text-xs text-gray-600 py-2">
+          © {new Date().getFullYear()} Learn Rohingya Fonna · <a href="https://eduboardrp.netlify.app " target="_blank">EduBoard</a>
+        </div>
+        <GrassFooter/>
+        </footer>
       </body>
     </html>
   );

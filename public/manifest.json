@@ -1,6 +1,6 @@
 {
-  "name": "Learn Rohingya Language",
-  "short_name": "Rohingya",
+  "name": "Learn Rohingya Fonna",
+  "short_name": "Rohingya Fonna",
   "description": "Learn the Hanifi Rohingya script offline — alphabets, vowels, numbers, words.",
   "start_url": "/",
   "display": "standalone",
@@ -12,8 +12,8 @@
   "dir": "ltr",
   "categories": ["education"],
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ],
   "shortcuts": [
     { "name": "Alphabets", "url": "/lesson-1" },

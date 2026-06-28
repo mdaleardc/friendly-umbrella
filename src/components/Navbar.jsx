@@ -4,104 +4,104 @@ import Link from "next/link";
 import { useState } from "react";
 import { LESSONS } from "@/lib/lessons";
 
+const LESSON_META = {
+  purple: { from: "#7C3AED", to: "#A855F7" },
+  blue:   { from: "#2563EB", to: "#3B82F6" },
+  green:  { from: "#059669", to: "#10B981" },
+  orange: { from: "#D97706", to: "#F59E0B" },
+};
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="w-full bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo and app name */}
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity" onClick={closeMenu}>
-          <span className="text-2xl">📚</span>
-          <h1 className="font-body text-lg font-black text-ink tracking-tight">
-            Learn Rohingya
-          </h1>
-        </Link>
+    <nav className="w-full sticky top-0 z-50">
+      {/* Emerald & Teal gradient bar */}
+      <div
+        className="w-full"
+        style={{ background: "linear-gradient(90deg, #064E3B 0%, #047857 50%, #0D9488 100%)" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
 
-        {/* Mobile menu button */}
-        <button
-          onClick={toggleMenu}
-          className="flex flex-col items-center justify-center gap-1.5 w-10 h-10 rounded-xl hover:bg-gray-100/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:hidden"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMenuOpen}
-          type="button"
-        >
-          <span className={`block w-5 h-0.5 bg-ink rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink rounded-full transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-        </button>
+          {/* Logo */}
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 rounded-lg px-1"
+          >
+            <span className="text-2xl leading-none drop-shadow">📚</span>
+            <span className="font-body text-base font-black text-white tracking-tight drop-shadow">
+              Learn Rohingya
+            </span>
+          </Link>
 
-        {/* Desktop navigation */}
-        <div className="hidden lg:flex items-center gap-6">
-          <Link href="/" className="font-body text-sm font-semibold text-ink hover:text-accent transition-colors">
-            Home
-          </Link>
-          <Link href="/about" className="font-body text-sm font-semibold text-ink-soft hover:text-accent transition-colors">
-            About
-          </Link>
-          <Link href="/progress" className="font-body text-sm font-semibold text-ink-soft hover:text-accent transition-colors">
-            Progress
-          </Link>
+          {/* Desktop nav */}
+          <div className="hidden lg:flex items-center gap-1">
+            <Link href="/"         className="nav-link nav-link-active">Home</Link>
+            <Link href="/about"    className="nav-link nav-link-default">About</Link>
+            <Link href="/progress" className="nav-link nav-link-default">Progress</Link>
+          </div>
+
+          {/* Hamburger */}
+          <button
+            onClick={() => setIsMenuOpen(v => !v)}
+            className="lg:hidden flex flex-col items-center justify-center gap-[5px] w-9 h-9 rounded-xl hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            type="button"
+          >
+            <span className={`block w-[18px] h-[2px] bg-white rounded-full transition-all duration-250 origin-center ${isMenuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+            <span className={`block w-[18px] h-[2px] bg-white rounded-full transition-all duration-250 ${isMenuOpen ? "opacity-0 scale-x-0" : ""}`} />
+            <span className={`block w-[18px] h-[2px] bg-white rounded-full transition-all duration-250 origin-center ${isMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+          </button>
         </div>
       </div>
 
-      {/* Mobile menu dropdown with lessons */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="px-4 py-3 bg-white/95 backdrop-blur-sm border-t border-gray-200/50">
-          {/* Lessons navigation – first (top) */}
-          <div>
-            <p className="font-body text-xs font-semibold text-ink-soft uppercase tracking-wider px-3 mb-2">
-              Lessons
-            </p>
-            <div className="flex flex-col gap-1">
-              {LESSONS.map((lesson) => (
+      {/* Mobile dropdown */}
+<div
+  className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out absolute top-14 left-0 right-0 w-full ${
+    isMenuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
+  }`}
+>
+  <div
+    className="px-4 pt-3 pb-4 shadow-lg" // Added shadow for depth
+    style={{ background: "linear-gradient(135deg, #0D9488 0%, #0F766E 100%)" }}
+  >
+          <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest px-1 mb-2">
+            Lessons
+          </p>
+          <div className="grid grid-cols-2 gap-2 mb-3">
+            {LESSONS.map((lesson) => {
+              const m = LESSON_META[lesson.color] || LESSON_META.purple;
+              return (
                 <Link
                   key={lesson.id}
                   href={lesson.href}
-                  className="font-body text-sm font-medium text-ink py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
                   onClick={closeMenu}
+                  className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur transition-all"
                 >
-                  <span className="text-lg">{lesson.emoji}</span>
-                  <span>{lesson.title}</span>
-                  <span className="text-xs text-ink-soft ml-auto">
-                    {lesson.count} {lesson.id === 4 ? 'words' : 'letters'}
-                  </span>
+                  <span className="text-base leading-none text-white">{lesson.emoji}</span>
+                  <div className="min-w-0">
+                    <p className="font-body text-sm font-bold text-white leading-tight truncate">{lesson.title}</p>
+                    <p className="font-body text-[10px] text-white/70 leading-tight">{lesson.count} {lesson.id === 4 ? "words" : "letters"}</p>
+                  </div>
                 </Link>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          {/* Divider line between Lessons and Main navigation */}
-          <div className="border-b border-gray-200/50 my-3"></div>
-
-          {/* Main navigation – second (below) */}
-          <div className="flex flex-col gap-1">
-            <Link
-              href="/"
-              className="font-body text-sm font-semibold text-ink py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors"
-              onClick={closeMenu}
-            >
-              🏠 Home
-            </Link>
-            <Link
-              href="/about"
-              className="font-body text-sm font-semibold text-ink-soft py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors"
-              onClick={closeMenu}
-            >
-              ℹ️ About
-            </Link>
+          <div className="border-t border-white/20 pt-3 flex flex-wrap gap-2">
+            {[{ href: "/", label: "🏠 Home" }, { href: "/about", label: "ℹ️ About" }, {href: "/developer", label: "Developer"}, {href: "/contact", label: "Contact"}].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={closeMenu}
+                className="flex-1 text-center font-body text-sm font-bold text-white py-2 px-3 rounded-xl bg-white/20 hover:bg-white/30 transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -3,18 +3,19 @@ import CharacterCard from "./CharacterCard";
 export default function CharacterGrid({ items, lessonHref }) {
   return (
     <section
-    dir="rtl"
+      dir="rtl"
       aria-label="Characters"
-      className="grid grid-cols-4 md:grid-cols-5 justify-center items-center gap-3 px-4 pb-4"
+      className="flex flex-wrap justify-center gap-2.5 px-2 pb-6"
     >
       {items.map((item, i) => (
-        <CharacterCard
-          key={item.id}
-          item={item}
-          index={i}
-          showName={true}
-          href={lessonHref ? `${lessonHref}/${item.id}` : undefined}
-        />
+        <div key={item.id} className="w-[22%] max-w-[90px]">
+          <CharacterCard
+            item={item}
+            index={i}
+            showName={true}
+            href={lessonHref ? `${lessonHref}/${item.id}` : undefined}
+          />
+        </div>
       ))}
     </section>
   );

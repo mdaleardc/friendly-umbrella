@@ -2,34 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Rohingya Hanifi script utility ─────────────────────────────────
-   RTL script: direction rtl + unicode-bidi isolate so it never bleeds
-   into surrounding LTR layout. Applied to every span/p with lang="rhg".
-   ──────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Noto Sans Hanifi Rohingya";
+  src: url("/fonts/Noto_Sans_Hanifi_Rohingya/static/NotoSansHanifiRohingya-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Rohingya Hanifi script utility ───────────────────────────────── */
 @layer components {
   .rohingya {
     font-family: "Noto Sans Hanifi Rohingya", sans-serif;
     font-feature-settings: "liga" 1, "calt" 1;
-    /* RTL — Hanifi Rohingya is written right-to-left */
     direction: rtl;
-    unicode-bidi: isolate;          /* isolate from surrounding LTR text */
+    unicode-bidi: isolate;
     text-align: right;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* Inline variant — for short labels inside LTR containers */
+  
   .rohingya-inline {
     font-family: "Noto Sans Hanifi Rohingya", sans-serif;
     font-feature-settings: "liga" 1, "calt" 1;
     direction: rtl;
     unicode-bidi: isolate;
-    display: inline-block;          /* block-level bidi isolation */
+    display: inline-block;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Block-level — for multi-word Rohingya text in its own container */
   .rohingya-block {
     font-family: "Noto Sans Hanifi Rohingya", sans-serif;
     font-feature-settings: "liga" 1, "calt" 1;
@@ -41,25 +44,56 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
+
+  .nav-link {
+    @apply font-body text-sm font-semibold transition-all duration-200 px-3 py-1.5 rounded-full;
+  }
+
+  .nav-link-active {
+    @apply bg-white/30 text-white;
+  }
+
+  .nav-link-default {
+    @apply text-white/70 hover:text-white hover:bg-white/20;
+  }
 }
 
 /* ── Base ─────────────────────────────────────────────────────────── */
 html, body {
-  /* App UI is LTR (English labels, nav arrows).
-     Only Rohingya text elements are marked RTL individually. */
   direction: ltr;
-  background-color: #EAF4FB;
+  /* Warm saffron-to-coral-to-rose gradient — joyful, culturally warm */
+  background: linear-gradient(145deg, #FFF3E0 0%, #FFF8F0 35%, #FFF0F5 70%, #F0F4FF 100%);
   min-height: 100%;
 }
 
 body {
   font-family: "Nunito", sans-serif;
+  color: #2D1B4E;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ── Scrollbar ────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #EAF4FB; }
-::-webkit-scrollbar-thumb { background: #A8D4EE; border-radius: 99px; }
+::-webkit-scrollbar-track { background: #FFF3E0; }
+::-webkit-scrollbar-thumb { background: #F4A261; border-radius: 99px; }
+
+/* ── Animations ───────────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+.animate-fade-up   { animation: fade-up 0.4s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-slide-down { animation: slide-down 0.22s ease both; }
+.animate-float     { animation: float 3s ease-in-out infinite; }
 
 /* ── Reduced motion ───────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
