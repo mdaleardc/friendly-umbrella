@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Rohingya Hanifi script utility ─────────────────────────────────
+   RTL script: direction rtl + unicode-bidi isolate so it never bleeds
+   into surrounding LTR layout. Applied to every span/p with lang="rhg".
+   ──────────────────────────────────────────────────────────────────── */
+@layer components {
+  .rohingya {
+    font-family: "Noto Sans Hanifi Rohingya", sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1;
+    /* RTL — Hanifi Rohingya is written right-to-left */
+    direction: rtl;
+    unicode-bidi: isolate;          /* isolate from surrounding LTR text */
+    text-align: right;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Inline variant — for short labels inside LTR containers */
+  .rohingya-inline {
+    font-family: "Noto Sans Hanifi Rohingya", sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1;
+    direction: rtl;
+    unicode-bidi: isolate;
+    display: inline-block;          /* block-level bidi isolation */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Block-level — for multi-word Rohingya text in its own container */
+  .rohingya-block {
+    font-family: "Noto Sans Hanifi Rohingya", sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1;
+    direction: rtl;
+    unicode-bidi: isolate;
+    text-align: right;
+    width: 100%;
+    display: block;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+html, body {
+  /* App UI is LTR (English labels, nav arrows).
+     Only Rohingya text elements are marked RTL individually. */
+  direction: ltr;
+  background-color: #EAF4FB;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #EAF4FB; }
+::-webkit-scrollbar-thumb { background: #A8D4EE; border-radius: 99px; }
+
+/* ── Reduced motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
