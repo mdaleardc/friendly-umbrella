@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { useAudio } from "@/lib/useAudio";
 
@@ -13,6 +13,17 @@ export default function WordDetailCard({ item, prevHref, nextHref }) {
     setPlaying(true);
     setTimeout(() => setPlaying(false), 700);
   }, [item.audio, play]);
+  
+  useEffect(() => {
+  if (!item.audio) return;
+
+  play(item.audio);
+  setPlaying(true);
+
+  const timer = setTimeout(() => setPlaying(false), 700);
+
+  return () => clearTimeout(timer);
+}, [item.audio, play]);
 
   return (
     <div className="flex flex-col items-center justify-start flex-1 px-4 pt-2 pb-8 gap-4 max-w-sm mx-auto">

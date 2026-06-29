@@ -1,5 +1,4 @@
 import "./globals.css";
-import InstallBanner from "@/components/InstallBanner";
 import Navbar from "@/components/Navbar";
 import GrassFooter from "@/components/GrassFooter";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -39,12 +38,12 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <meta name="google-site-verification" content="-vNXOHJzAJLadGqgV8LjMX5BmcBOz63CISuLHuEp2x4" />
       </head>
       <body className="bg-sky-bg min-h-dvh flex flex-col" dir="ltr">
         <GoogleAnalytics gaId="G-FLVCT8T6PL"/>
         <Navbar />
         <main className="flex-1">{children}</main>
-        <InstallBanner />
         <footer className="mt-auto shrink-0">
         <div className="text-center text-xs text-gray-600 py-2">
           © {new Date().getFullYear()} Learn Rohingya Fonna · <a href="https://eduboardrp.netlify.app " target="_blank">EduBoard</a>
