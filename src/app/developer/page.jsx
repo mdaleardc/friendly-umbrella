@@ -64,7 +64,7 @@ export default function DeveloperPage() {
   knowledge more accessible. I created{" "}
   <span className="font-semibold text-ink">Learn Rohingya Fonna</span> to help
   Rohingya children and learners around the world read and write the Hanifi
-  Rohingya script through a free, offline-friendly, and interactive learning
+  Rohingya script through a free, user-friendly, and interactive learning
   experience.
 </p>
         {/* Divider */}

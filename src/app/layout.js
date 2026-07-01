@@ -1,7 +1,8 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import GrassFooter from "@/components/GrassFooter";
+import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+//import ClearStorage from "@/components/ClearStorage"
 
 export const metadata = {
   title: "Learn Rohingya Fonna",
@@ -45,10 +46,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <footer className="mt-auto shrink-0">
-        <div className="text-center text-xs text-gray-600 py-2">
-          © {new Date().getFullYear()} Learn Rohingya Fonna · <a href="https://eduboardrp.netlify.app " target="_blank">EduBoard</a>
-        </div>
-        <GrassFooter/>
+        <Footer/>
         </footer>
       </body>
     </html>

@@ -64,7 +64,7 @@ export default function AboutPage() {
               Learn Rohingya Fonna
             </p>
             <p className="font-body text-xs text-ink-soft mt-1">
-              Free · Offline · For everyone
+              Free · For everyone
             </p>
           </div>
 

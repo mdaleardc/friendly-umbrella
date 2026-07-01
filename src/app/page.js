@@ -120,7 +120,7 @@ export default function HomePage() {
             className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-4 font-body tracking-wide"
             style={ { background: "linear-gradient(90deg,#F4A261,#E85D26)", color: "#fff" }}
             >
-            ✦ Free · Offline · Open
+            ✦ Free · Open
           </div>
           <h2 className="font-body text-3xl font-black tracking-tight leading-tight" style={ { color: "#2D1B4E" }}>
             Learn the Hanifi<br />

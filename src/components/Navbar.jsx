@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { LESSONS } from "@/lib/lessons";
+import Image from "next/image"
 
 const LESSON_META = {
   purple: { from: "#7C3AED", to: "#A855F7" },
@@ -30,9 +31,16 @@ export default function Navbar() {
             onClick={closeMenu}
             className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 rounded-lg px-1"
           >
-            <span className="text-2xl leading-none drop-shadow">📚</span>
+            <Image
+              src="/icons/icon-48x48.png"
+              alt="Learn Rohingya Fonna"
+              width={32}
+              height={32}
+              className="rounded-md"
+            />
+          
             <span className="font-body text-base font-black text-white tracking-tight drop-shadow">
-              Learn Rohingya
+              Learn Rohingya Fonna
             </span>
           </Link>
 
@@ -40,7 +48,6 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-1">
             <Link href="/"         className="nav-link nav-link-active">Home</Link>
             <Link href="/about"    className="nav-link nav-link-default">About</Link>
-            <Link href="/progress" className="nav-link nav-link-default">Progress</Link>
           </div>
 
           {/* Hamburger */}

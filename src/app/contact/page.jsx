@@ -8,28 +8,28 @@ const CONTACTS = [
   {
     icon: "💬",
     label: "Facebook",
-    handle: "icodespace",
+    handle: "rohingyafonna",
     url: "https://m.facebook.com/mdaismail.it",
     note: "Fastest response",
   },
   {
     icon: "🐦",
     label: "Twitter / X",
-    handle: "@icodespace",
+    handle: "rohingyafonna",
     url: "https://x.com/MdIsmail5851415",
     note: null,
   },
   {
     icon: "💼",
     label: "LinkedIn",
-    handle: "icodespace",
+    handle: "rohingyafonna",
     url: "https://www.linkedin.com/in/mohammed-ismail-601457217/",
     note: null,
   },
   {
     icon: "📧",
     label: "Email",
-    handle: "your@email.com",   // ← replace
+    handle: "rohingyafonna",   // ← replace
     url: "mailto: ismailmd.code@gmail.com",
     note: null,
   },
