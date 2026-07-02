@@ -9,7 +9,7 @@
  
 
 const certificates = [
-  { id: "LRF-2026-0085", imageFile: "LRF-CRLTP-2026-07702.png" },
+  { id: "LRF-4Q9N-JX82-MP7A", imageFile: "LRF-4Q9N-JX82-MP7A.png" },
   // { id: "RLF-2025-003", imageFile: "RLF-2025-003.png" },
 ];
 
