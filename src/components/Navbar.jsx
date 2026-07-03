@@ -32,7 +32,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 rounded-lg px-1"
           >
             <Image
-              src="/icons/icon-48x48.png"
+              src="/logo.png"
               alt="Learn Rohingya Fonna"
               width={32}
               height={32}

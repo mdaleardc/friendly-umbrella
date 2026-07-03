@@ -6,8 +6,36 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Learn Rohingya Fonna",
-  description: "Learn the Hanifi Rohingya script — alphabets, vowels, numbers, and words. Free offline app.",
+  description:
+    "Learn the Hanifi Rohingya script — alphabets, vowels, numbers, and words. Free offline app.",
   manifest: "/manifest.json",
+
+  openGraph: {
+    title: "Learn Rohingya Fonna",
+    description:
+      "Learn the Hanifi Rohingya script — alphabets, vowels, numbers, and words. Free offline app.",
+    url: "https://rohingyaapp.netlify.app",
+    siteName: "Learn Rohingya Fonna",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Learn Rohingya Fonna",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Learn Rohingya Fonna",
+    description:
+      "Learn the Hanifi Rohingya script — alphabets, vowels, numbers, and words. Free offline app.",
+    images: ["/og-image.png"],
+  },
+
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -22,12 +50,6 @@ export const viewport = {
 };
 export default function RootLayout({ children }) {
   return (
-    /*
-     * dir="ltr" on <html>: the app shell (navigation, labels, buttons) is
-     * English / LTR. All Rohingya Hanifi script elements carry their own
-     * dir="rtl" + unicode-bidi:isolate so they render RTL correctly inside
-     * the LTR layout without affecting surrounding elements.
-     */
     <html lang="en" dir="ltr" style={{ background: "#d0e8f5" }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +60,7 @@ export default function RootLayout({ children }) {
 />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <meta name="google-site-verification" content="-vNXOHJzAJLadGqgV8LjMX5BmcBOz63CISuLHuEp2x4" />
       </head>
       <body className="bg-sky-bg min-h-dvh flex flex-col" dir="ltr">

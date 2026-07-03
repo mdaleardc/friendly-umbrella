@@ -26,10 +26,10 @@ export default function Footer() {
             <div className="w-8 h-8 rounded-lg bg-card border border-card-border flex items-center justify-center flex-shrink-0 overflow-hidden">
               <Image
                 className="rounded-md"
-                src="/icons/icon-48x48.png"
+                src="/logo.png"
                 alt="Learn Rohingya Fonna"
-                width={26}
-                height={28}
+                width={30}
+                height={30}
               />
             </div>
             <div>
@@ -58,6 +58,8 @@ export default function Footer() {
             { label: "About",     href: "/about" },
             { label: "Developer", href: "/developer" },
             { label: "Contact",   href: "/contact" },
+            { label: "Privacy",   href: "/privacy" },
+            { label: "Terms",   href: "/terms" },
           ].map((link) => (
             <Link
               key={link.href}
