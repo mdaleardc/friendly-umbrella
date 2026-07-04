@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Noto Sans Hanifi Rohingya";
-  src: url("/fonts/Noto_Sans_Hanifi_Rohingya/static/NotoSansHanifiRohingya-Regular.ttf")
-    format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ── Rohingya Hanifi script utility ───────────────────────────────── */
 @layer components {
   .rohingya {
-    font-family: "Noto Sans Hanifi Rohingya", sans-serif;
+    font-family: var(--font-hanifi), sans-serif;
     font-feature-settings: "liga" 1, "calt" 1;
     direction: rtl;
     unicode-bidi: isolate;
@@ -22,9 +13,9 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
-  
+
   .rohingya-inline {
-    font-family: "Noto Sans Hanifi Rohingya", sans-serif;
+    font-family: var(--font-hanifi), sans-serif;
     font-feature-settings: "liga" 1, "calt" 1;
     direction: rtl;
     unicode-bidi: isolate;
@@ -34,7 +25,7 @@
   }
 
   .rohingya-block {
-    font-family: "Noto Sans Hanifi Rohingya", sans-serif;
+    font-family: var(--font-hanifi), sans-serif;
     font-feature-settings: "liga" 1, "calt" 1;
     direction: rtl;
     unicode-bidi: isolate;

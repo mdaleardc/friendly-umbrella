@@ -51,6 +51,19 @@ export const LESSONS = [
     cardBg: "#FAE0C0",
     cardBorder: "#F0C898",
   },
+  {
+    id: 5,
+    slug: "quiz",
+    href: "/quiz",
+    title: "Play Quiz",
+    titleRhg: "𐴑𐴟𐴤𐴞𐴎 𐴑𐴠𐴤𐴓𐴡𐴤",
+    description: "Test your Rohingya knowledge with fun quizzes",
+    count: 28,
+    emoji: "🧩",
+    color: "fuchsia",
+    cardBg: "#FF0088",
+    cardBorder: "#CDB7FF",
+  },
 ];
 
 export function getLessonById(id) {

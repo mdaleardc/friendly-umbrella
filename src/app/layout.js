@@ -1,8 +1,10 @@
 import "./globals.css";
+import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
-//import ClearStorage from "@/components/ClearStorage"
+import InstallBanner from "@/components/InstallBanner";
+
 
 export const metadata = {
   title: "Learn Rohingya Fonna",
@@ -48,9 +50,17 @@ export const viewport = {
   initialScale: 1,
   themeColor: "#2A091B",
 };
+
+const notoHanifi = localFont({
+  src: "../fonts/Noto_Sans_Hanifi_Rohingya/NotoSansHanifiRohingya-VariableFont_wght.ttf",
+  variable: "--font-hanifi",
+  weight: "100 900",
+  display: "swap"
+})
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" dir="ltr" style={{ background: "#d0e8f5" }}>
+    <html lang="en" className={notoHanifi.variable} dir="ltr" style={{ background: "#d0e8f5" }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -68,7 +78,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <footer className="mt-auto shrink-0">
-        <Footer/>
+          <InstallBanner/>
+          <Footer/>
         </footer>
       </body>
     </html>

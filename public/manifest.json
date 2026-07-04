@@ -19,6 +19,7 @@
     { "name": "Alphabets", "url": "/lesson-1" },
     { "name": "Vowels",    "url": "/lesson-2" },
     { "name": "Numbers",   "url": "/lesson-3" },
-    { "name": "Words",     "url": "/lesson-4" }
+    { "name": "Words",     "url": "/lesson-4" },
+    { "name": "Quiz",     "url": "/quiz" }
   ]
 }

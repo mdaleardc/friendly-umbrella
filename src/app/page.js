@@ -31,11 +31,16 @@ const LESSON_STYLES = {
     text: "#FFFFFF",
     subtext: "rgba(255,255,255,0.75)",
   },
+  fuchsia: {
+    grad: "linear-gradient(135deg, #FF005D 0%, #E800FF 100%)",
+    shadow: "0 8px 24px rgba(232, 0, 255, 0.35)",
+    badge: "rgba(255,255,255,0.25)",
+    text: "#FFFFFF",
+    subtext: "rgba(255,255,255,0.75)",
+  },
 };
 
-function LessonCard( {
-  lesson, index
-}) {
+function LessonCard({ lesson, index }) {
   const s = LESSON_STYLES[lesson.color] || LESSON_STYLES.purple;
   const delay = `${index * 90}ms`;
 
@@ -138,9 +143,14 @@ export default function HomePage() {
         className="grid grid-cols-2 gap-4 [direction:rtl]"
         role="list"
         aria-label="Lessons"
-        >
+      >
         {LESSONS.map((lesson, i) => (
-          <LessonCard key={lesson.id} lesson={lesson} index={i} />
+          <div
+            key={lesson.id}
+            className={lesson.id === 5 ? "col-span-2" : ""}
+          >
+            <LessonCard lesson={lesson} index={i} />
+          </div>
         ))}
       </div>
 

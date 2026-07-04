@@ -6,7 +6,7 @@ export default function InstallBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handler = (e) => { e.preventDefault(); setPrompt(e); setVisible(true); };
+    const handler = (e) => { e.preventDefault(); setPrompt(e); setVisible(true); console.log("beforeinstallprompt fired"); };
     window.addEventListener("beforeinstallprompt", handler);
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);

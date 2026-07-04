@@ -7,10 +7,12 @@ const LESSON_THEMES = {
   blue:   { grad: "linear-gradient(135deg,#1D4ED8,#3B82F6)", shadow: "rgba(29,78,216,0.3)",   text: "#fff", sub: "rgba(255,255,255,0.75)" },
   green:  { grad: "linear-gradient(135deg,#065F46,#10B981)", shadow: "rgba(6,95,70,0.3)",     text: "#fff", sub: "rgba(255,255,255,0.75)" },
   orange: { grad: "linear-gradient(135deg,#C2410C,#F97316)", shadow: "rgba(194,65,12,0.3)",   text: "#fff", sub: "rgba(255,255,255,0.75)" },
+  fuchsia: { grad: "linear-gradient(135deg, #FF005D 0%, #E800FF 100%)", shadow: "rgba(232, 0, 255, 0.30)", text: "#FFFFFF", sub: "rgba(255,255,255,0.75)",
+},
 };
 
 export default function LessonShell({ lesson, prev, next, children }) {
-  const t = LESSON_THEMES[lesson?.color] || LESSON_THEMES.purple;
+  const t = LESSON_THEMES[lesson?.color] || LESSON_THEMES.pink;
 
   return (
     <div dir="ltr" className="flex flex-col min-h-screen">

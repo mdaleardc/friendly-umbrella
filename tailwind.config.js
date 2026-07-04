@@ -44,8 +44,8 @@ module.exports = {
         "gradient-end": "#E8835E",
       },
       fontFamily: {
-        body:     ["Plus Jakarta Sans", "sans-serif"],
-        rohingya: ['"Noto Sans Hanifi Rohingya"', "sans-serif"],
+        body: ["Nunito", "sans-serif"],
+        rohingya: ["var(--font-hanifi)", "sans-serif"],
       },
       borderRadius: {
         card: "1.5rem",

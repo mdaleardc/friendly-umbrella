@@ -288,7 +288,7 @@ const words = [{
     wordRhg: "𐴁𐴝𐴤𐴃𐴧𐴗𐴝",
     wordLatin: "battua",
     meaning: "Myna",
-    emoji: "🐦‍⬛",
+    emoji: "🐦",
     audio: "/audio/words/24.mp3"
   },
   {
