@@ -58,7 +58,7 @@ export const LESSONS = [
     title: "Play Quiz",
     titleRhg: "𐴑𐴟𐴤𐴞𐴎 𐴑𐴠𐴤𐴓𐴡𐴤",
     description: "Test your Rohingya knowledge with fun quizzes",
-    count: 28,
+    count: 5,
     emoji: "🧩",
     color: "fuchsia",
     cardBg: "#FF0088",

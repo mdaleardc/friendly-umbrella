@@ -21,7 +21,7 @@ export default function InstallBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-sm animate-slide-down">
+    <div className="fixed bottom-2 left-3 md:left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-sm animate-slide-down">
       <div
         className="flex items-center gap-3 px-4 py-3 rounded-2xl"
         style={{
@@ -32,7 +32,7 @@ export default function InstallBanner() {
         <span className="text-2xl flex-shrink-0">📲</span>
         <div className="flex-1 min-w-0">
           <p className="font-body text-sm font-black text-white leading-tight">Install app</p>
-          <p className="font-body text-xs text-white/70 leading-tight">Use offline, anytime</p>
+          <p className="font-body text-xs text-white/70 leading-tight">Open • Free for everyone</p>
         </div>
         <button
           onClick={install}
